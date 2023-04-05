@@ -23,8 +23,6 @@ jobs:
           yarn build --base /${{ github.event.repository.name }}/
           cp dist/index.html dist/404.html
       - name: Deploy pages
-        uses: crazy-max/ghaction-github-pages@v2.3.0
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          folder: dist
